@@ -15,7 +15,7 @@ st.set_page_config(
 st.title("")
 st.sidebar.success("Pilih Halaman Yang Ingin Anda Tuju.")
 
-st.title("Prediksi Nilai Saham Bank BCA")
+st.title("Prediksi Harga Saham Bank BCA")
 
 tab1, tab2, tab3, tab4 = st.tabs(["Data", "Preprocessing Data", "Modeling", "Implementasi"])
 
