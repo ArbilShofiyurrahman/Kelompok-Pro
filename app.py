@@ -7,7 +7,7 @@ model = pickle.load(open('knn_model.pkl', 'rb'))
 model2 = pickle.load(open('naive_bayes_model.pkl', 'rb'))
 
 st.set_page_config(
-    page_title="Prediksi Nilai Saham Bank BCA",
+    page_title="Prediksi Harga Saham Bank BCA",
     page_icon="👋",
 )
 
@@ -20,9 +20,10 @@ st.title("Prediksi Nilai Saham Bank BCA")
 tab1, tab2, tab3, tab4 = st.tabs(["Data", "Preprocessing Data", "Modeling", "Implementasi"])
 
 with tab1:
+   st.markdown("### Deskripsi Data Saham BBCA")
    st.image("data.jpeg")
     # Deskripsi data saham BBCA
-   st.markdown("### Deskripsi Data Saham BBCA")
+   
    st.markdown("1. Asal Data:")
    st.markdown("   Saya telah mengambil data harga saham PT Bank Central Asia Tbk (BBCA) dari sumber yang terpercaya, yaitu Yahoo Finance.")
    st.markdown("2. Tipe Data:")
