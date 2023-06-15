@@ -30,7 +30,7 @@ elif selected_page == "Modelling":
 elif selected_page == "Implementation":
     st.markdown("<h1 style='text-align: center;'>Prediksi Saham</h1>", unsafe_allow_html=True)
     
-    col1, col2, col3 = st.beta_columns(3)
+    col1, col2, col3 = st._columns(3)
     
     with col1:
         input1 = st.text_input("Input 1")
