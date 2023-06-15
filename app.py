@@ -17,7 +17,7 @@ selected_page = st.sidebar.radio(
 
 # Tampilkan konten sesuai dengan halaman yang dipilih
 if selected_page == "Data":
-    st.header("Data Page")
+    st.header("Data")
     # Tambahkan konten untuk halaman Data di sini
        
 
@@ -66,7 +66,7 @@ elif selected_page == "Preprocessing Data":
         st.dataframe(df_dimensi)
 
 elif selected_page == "Modelling":
-    st.header("Modelling Page")
+    st.header("Modelling")
     
     # Tambahkan pilihan model
     model_option = st.selectbox("Pilih Model", ("Naive Bayes", "KNN"))
