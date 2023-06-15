@@ -11,6 +11,7 @@ st.set_page_config(
     page_icon="👋",
 )
 
+
 st.title("")
 st.sidebar.success("Pilih Halaman Yang Ingin Anda Tuju.")
 
