@@ -60,7 +60,7 @@ with tab4:
     Volume = st.number_input("Volume perdagangan saham dalam suatu periode waktu.", key="Volume", value= 10653900)
 
     if st.button('Prediksi'):
-        prediksi = predict(Open, High, Low, Volume)
-        prediksi2 = predict2(Open, High, Low, Volume)
+        prediksi = predict(Close, High, Low, Volume)
+        prediksi2 = predict2(Close, High, Low, Volume)
         st.success(f'Prediksi harga penutupan KNN: {prediksi}')
         st.success(f'Prediksi harga penutupan Menggunakan Naive Bayes: {prediksi2}')
