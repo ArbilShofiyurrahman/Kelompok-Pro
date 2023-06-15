@@ -62,5 +62,5 @@ with tab4:
     if st.button('Prediksi'):
         prediksi = predict(Close, High, Low, Volume)
         prediksi2 = predict2(Close, High, Low, Volume)
-        st.success(f'Prediksi harga penutupan KNN: {prediksi}')
-        st.success(f'Prediksi harga penutupan Menggunakan Naive Bayes: {prediksi2}')
+        st.success(f'Prediksi harga pembukaan KNN: {prediksi}')
+        st.success(f'Prediksi harga pembukaan Menggunakan Naive Bayes: {prediksi2}')
