@@ -14,12 +14,12 @@ st.set_page_config(
 st.title("")
 st.sidebar.success("Pilih Halaman Yang Ingin Anda Tuju.")
 
-st.title("Prediksi Nilai Saham Bank BcA")
+st.title("Prediksi Nilai Saham Bank BCA")
 
 tab1, tab2, tab3, tab4 = st.tabs(["Data", "Preprocessing Data", "Modeling", "Implementasi"])
 
 with tab1:
-   st.image("data.JPEG")
+   st.image("data.jpeg")
     # Deskripsi data saham BBCA
    st.markdown("### Deskripsi Data Saham BBCA")
    st.markdown("1. Asal Data:")
@@ -32,15 +32,15 @@ with tab1:
 
 with tab2:
    st.write("Reduksi Dimensi")
-   st.image("ReduksiDimensi.JPEG")
+   st.image("ReduksiDimensi.jpeg")
    st.write("MinMax Scaller")
-   st.image("MMScaler.JPEG")
+   st.image("MMScaler.jpeg")
     
 with tab3:
    st.write("Metode KNN")
-   st.image("AkurasiKNN.JPEG")
+   st.image("AkurasiKNN.jpeg")
    st.write("Metode Naive Bayes")
-   st.image("AkurasiNB.JPEG")
+   st.image("AkurasiNB.jpeg")
 
 with tab4:
     # Define the prediction function
