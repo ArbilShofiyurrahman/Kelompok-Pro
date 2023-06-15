@@ -7,70 +7,26 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Menampilkan navbar di bagian atas (top center) halaman
-st.markdown(
-    """
-    <style>
-    .navbar {
-        display: flex;
-        justify-content: center;
-        padding: 1rem;
-        background-color: #f0f0f0;
-        margin-bottom: 1rem;
-    }
-    .navbar a {
-        text-decoration: none;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
+# Menampilkan navbar
+st.sidebar.title("Navigation")
+selected_page = st.sidebar.radio(
+    "Go to",
+    ("Data", "Preprocessing Data", "Modelling", "Implementation")
 )
 
-# Konten halaman "Data"
-if "Data" in st.session_state and st.session_state["Data"]:
-    st.header("Halaman Data")
-else:
-    st.session_state["Data"] = False
+# Tampilkan konten sesuai dengan halaman yang dipilih
+if selected_page == "Data":
+    st.header("Data Page")
+    # Tambahkan konten untuk halaman Data di sini
 
-# Konten halaman "Preprocessing Data"
-if "Preprocessing" in st.session_state and st.session_state["Preprocessing"]:
-    st.header("Halaman Preprocessing Data")
-else:
-    st.session_state["Preprocessing"] = False
+elif selected_page == "Preprocessing Data":
+    st.header("Preprocessing Data Page")
+    # Tambahkan konten untuk halaman Preprocessing Data di sini
 
-# Konten halaman "Modelling"
-if "Modelling" in st.session_state and st.session_state["Modelling"]:
-    st.header("Halaman Modelling")
-else:
-    st.session_state["Modelling"] = False
+elif selected_page == "Modelling":
+    st.header("Modelling Page")
+    # Tambahkan konten untuk halaman Modelling di sini
 
-# Konten halaman "Implementation"
-if "Implementation" in st.session_state and st.session_state["Implementation"]:
-    st.header("Halaman Implementation")
-else:
-    st.session_state["Implementation"] = False
-
-# Tampilkan navbar
-if st.button("Data"):
-    st.session_state["Data"] = True
-    st.session_state["Preprocessing"] = False
-    st.session_state["Modelling"] = False
-    st.session_state["Implementation"] = False
-
-if st.button("Preprocessing Data"):
-    st.session_state["Data"] = False
-    st.session_state["Preprocessing"] = True
-    st.session_state["Modelling"] = False
-    st.session_state["Implementation"] = False
-
-if st.button("Modelling"):
-    st.session_state["Data"] = False
-    st.session_state["Preprocessing"] = False
-    st.session_state["Modelling"] = True
-    st.session_state["Implementation"] = False
-
-if st.button("Implementation"):
-    st.session_state["Data"] = False
-    st.session_state["Preprocessing"] = False
-    st.session_state["Modelling"] = False
-    st.session_state["Implementation"] = True
+elif selected_page == "Implementation":
+    st.header("Implementation Page")
+    # Tambahkan konten untuk halaman Implementation di sini
