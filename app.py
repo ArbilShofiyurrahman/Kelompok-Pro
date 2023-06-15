@@ -28,5 +28,17 @@ elif selected_page == "Modelling":
     # Tambahkan konten untuk halaman Modelling di sini
 
 elif selected_page == "Implementation":
-    st.header("Implementation Page")
+    st.markdown("<h1 style='text-align: center;'>Prediksi Saham</h1>", unsafe_allow_html=True)
+    
+    col1, col2, col3 = st.beta_columns(3)
+    
+    with col1:
+        input1 = st.text_input("Input 1")
+    
+    with col2:
+        input2 = st.text_input("Input 2")
+    
+    with col3:
+        input3 = st.text_input("Input 3")
+    
     # Tambahkan konten untuk halaman Implementation di sini
