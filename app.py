@@ -50,16 +50,19 @@ elif selected_page == "Implementation":
     with st.markdown("<div class='flex-container'>"):
         st.write("Kolom Input 1")
         # Tambahkan konten kolom input 1 di sini
+        input1 = st.text_input("Input 1:")
     st.markdown("</div>", unsafe_allow_html=True)
     
     # Tambahkan konten kolom input 2
     with st.markdown("<div class='flex-container'>"):
         st.write("Kolom Input 2")
         # Tambahkan konten kolom input 2 di sini
+        input2 = st.text_input("Input 2:")
     st.markdown("</div>", unsafe_allow_html=True)
     
     # Tambahkan konten kolom input 3
     with st.markdown("<div class='flex-container'>"):
         st.write("Kolom Input 3")
         # Tambahkan konten kolom input 3 di sini
+        input3 = st.text_input("Input 3:")
     st.markdown("</div>", unsafe_allow_html=True)
