@@ -22,6 +22,37 @@ if selected_page == "Data":
 elif selected_page == "Preprocessing Data":
     st.header("Preprocessing Data Page")
     # Tambahkan konten untuk halaman Preprocessing Data di sini
+    
+        # Tambahkan pilihan preprocessing
+    preprocessing_option = st.selectbox("Pilih Preprocessing", ("MinMaxScaler", "Reduksi Dimensi"))
+
+    if preprocessing_option == "MinMaxScaler":
+        st.write("Anda memilih MinMaxScaler")
+        # Tambahkan konten untuk MinMaxScaler di sini
+        
+        # Simulasikan hasil preprocessing dengan tabel 3x3
+        df = pd.DataFrame({
+            'Fitur': ['Fitur 1', 'Fitur 2', 'Fitur 3'],
+            'Hasil 1': [0.1, 0.2, 0.3],
+            'Hasil 2': [0.4, 0.5, 0.6],
+            'Hasil 3': [0.7, 0.8, 0.9]
+        })
+        st.subheader("Hasil Preprocessing")
+        st.dataframe(df)
+
+    elif preprocessing_option == "Reduksi Dimensi":
+        st.write("Anda memilih Reduksi Dimensi")
+        # Tambahkan konten untuk Reduksi Dimensi di sini
+        
+        # Simulasikan hasil preprocessing dengan tabel 3x3
+        df = pd.DataFrame({
+            'Fitur': ['Fitur 1', 'Fitur 2', 'Fitur 3'],
+            'Hasil 1': [1, 2, 3],
+            'Hasil 2': [4, 5, 6],
+            'Hasil 3': [7, 8, 9]
+        })
+        st.subheader("Hasil Preprocessing")
+        st.dataframe(df)
 
 elif selected_page == "Modelling":
     st.header("Modelling Page")
