@@ -26,16 +26,23 @@ elif selected_page == "Preprocessing Data":
 elif selected_page == "Modelling":
     st.header("Modelling Page")
     # Tambahkan konten untuk halaman Modelling di sini
-     # Tambahkan pilihan model
-    model_option = st.selectbox("Pilih Model", ("Naive Bayes", "KNN"))
-
     if model_option == "Naive Bayes":
         st.write("Anda memilih model Naive Bayes")
         # Tambahkan konten untuk model Naive Bayes di sini
+        
+        # Simulasikan penghitungan akurasi Naive Bayes
+        accuracy = 0.85  # Contoh nilai akurasi
+        
+        st.write("Hasil Akurasi Naive Bayes: {:.2f}".format(accuracy))
 
     elif model_option == "KNN":
         st.write("Anda memilih model KNN")
         # Tambahkan konten untuk model KNN di sini
+        
+        # Simulasikan penghitungan akurasi KNN
+        accuracy = 0.92  # Contoh nilai akurasi
+        
+        st.write("Hasil Akurasi KNN: {:.2f}".format(accuracy))
 
 elif selected_page == "Implementation":
     st.header("Implementation Page")
