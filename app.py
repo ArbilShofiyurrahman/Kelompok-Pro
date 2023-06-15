@@ -28,17 +28,38 @@ elif selected_page == "Modelling":
     # Tambahkan konten untuk halaman Modelling di sini
 
 elif selected_page == "Implementation":
+    st.header("Implementation Page")
     st.markdown("<h1 style='text-align: center;'>Prediksi Saham</h1>", unsafe_allow_html=True)
     
-    col1, col2, col3 = st.columns(3)
+    # Membuat layout kolom secara vertikal menggunakan Flexbox
+    st.markdown(
+        """
+        <style>
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
     
-    with col1:
-        input1 = st.text_input("Input 1")
+    # Tambahkan konten kolom input 1
+    with st.markdown("<div class='flex-container'>"):
+        st.write("Kolom Input 1")
+        # Tambahkan konten kolom input 1 di sini
+    st.markdown("</div>", unsafe_allow_html=True)
     
-    with col2:
-        input2 = st.text_input("Input 2")
+    # Tambahkan konten kolom input 2
+    with st.markdown("<div class='flex-container'>"):
+        st.write("Kolom Input 2")
+        # Tambahkan konten kolom input 2 di sini
+    st.markdown("</div>", unsafe_allow_html=True)
     
-    with col3:
-        input3 = st.text_input("Input 3")
-    
-    # Tambahkan konten untuk halaman Implementation di sini
+    # Tambahkan konten kolom input 3
+    with st.markdown("<div class='flex-container'>"):
+        st.write("Kolom Input 3")
+        # Tambahkan konten kolom input 3 di sini
+    st.markdown("</div>", unsafe_allow_html=True)
