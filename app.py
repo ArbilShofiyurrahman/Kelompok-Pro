@@ -66,3 +66,5 @@ elif selected_page == "Implementation":
         # Tambahkan konten kolom input 3 di sini
         input3 = st.text_input("Input 3:")
     st.markdown("</div>", unsafe_allow_html=True)
+     # Tambahkan tombol "Hasil Prediksi"
+    st.button("Hasil Prediksi")
