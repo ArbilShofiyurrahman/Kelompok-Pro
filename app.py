@@ -45,11 +45,11 @@ with tab4:
     
     st.header('Jawablah Semua Pertanyaan Berikut :')
 
-    Open = st.selectbox('Apakah anak-anak aman di antara anggota keluarga seperti kakek nenek, paman, bibi, sepupu', ['Setuju', 'Tidak Setuju'])
-    High = st.selectbox('Anak-anak paling sering dilecehkan oleh orang asing di masyarakat kita', ['Setuju', 'Tidak Setuju'])
-    Low = st.selectbox('Anak laki-laki tidak membutuhkan pengetahuan pencegahan pelecehan seksual', ['Setuju', 'Tidak Setuju'])
-    Close = st.selectbox('Mengajarkan pencegahan pelecehan seksual di sekolah tidak perlu. Itu akan membuat anak penasaran dengan seks', ['Setuju', 'Tidak Setuju'])
-    Volume = st.selectbox('Apakah anda tahu apa itu perawatan anak?', ['Iya Tahu', 'Tidak Tahu'])
+    Open = st.selectbox('open', ['Setuju', 'Tidak Setuju'])
+    High = st.selectbox('high', ['Setuju', 'Tidak Setuju'])
+    Low = st.selectbox('low', ['Setuju', 'Tidak Setuju'])
+    Close = st.selectbox('close', ['Setuju', 'Tidak Setuju'])
+    Volume = st.selectbox('vol', ['Iya Tahu', 'Tidak Tahu'])
 
     if st.button('Prediksi'):
         prediksi = predict(Open, High, Low, Close, Volume)
