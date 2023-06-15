@@ -61,7 +61,7 @@ elif selected_page == "Modelling":
     model_option = st.selectbox("Pilih Model", ("Naive Bayes", "KNN"))
 
     if model_option == "Naive Bayes":
-        st.write("Anda memilih model Naive Bayes")
+        st.write("Ini Model model Naive Bayes")
         # Tambahkan konten untuk model Naive Bayes di sini
         
         # Simulasikan penghitungan akurasi Naive Bayes
@@ -70,7 +70,7 @@ elif selected_page == "Modelling":
         st.write("Hasil Akurasi Naive Bayes: {:.2f}".format(accuracy))
 
     elif model_option == "KNN":
-        st.write("Anda memilih model KNN")
+        st.write("Ini model KNN")
         # Tambahkan konten untuk model KNN di sini
         
         # Simulasikan penghitungan akurasi KNN
