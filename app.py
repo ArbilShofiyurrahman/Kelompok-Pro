@@ -25,7 +25,10 @@ elif selected_page == "Preprocessing Data":
 
 elif selected_page == "Modelling":
     st.header("Modelling Page")
-    # Tambahkan konten untuk halaman Modelling di sini
+    
+    # Tambahkan pilihan model
+    model_option = st.selectbox("Pilih Model", ("Naive Bayes", "KNN"))
+
     if model_option == "Naive Bayes":
         st.write("Anda memilih model Naive Bayes")
         # Tambahkan konten untuk model Naive Bayes di sini
@@ -64,24 +67,25 @@ elif selected_page == "Implementation":
     )
     
     # Tambahkan konten kolom input 1
-    with st.markdown("<div class='flex-container'>"):
+    with st.markdown("<div class='flex-container'>", unsafe_allow_html=True):
         st.write("Kolom Input 1")
         # Tambahkan konten kolom input 1 di sini
         input1 = st.text_input("Input 1:")
     st.markdown("</div>", unsafe_allow_html=True)
     
     # Tambahkan konten kolom input 2
-    with st.markdown("<div class='flex-container'>"):
+    with st.markdown("<div class='flex-container'>", unsafe_allow_html=True):
         st.write("Kolom Input 2")
         # Tambahkan konten kolom input 2 di sini
         input2 = st.text_input("Input 2:")
     st.markdown("</div>", unsafe_allow_html=True)
     
     # Tambahkan konten kolom input 3
-    with st.markdown("<div class='flex-container'>"):
+    with st.markdown("<div class='flex-container'>", unsafe_allow_html=True):
         st.write("Kolom Input 3")
         # Tambahkan konten kolom input 3 di sini
         input3 = st.text_input("Input 3:")
     st.markdown("</div>", unsafe_allow_html=True)
-     # Tambahkan tombol "Hasil Prediksi"
+    
+    # Tambahkan tombol "Hasil Prediksi"
     st.button("Hasil Prediksi")
