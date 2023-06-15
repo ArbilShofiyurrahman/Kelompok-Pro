@@ -1,90 +1,58 @@
-import streamlit as st
 import pandas as pd
+import pickle
+import streamlit as st
 
-# Konfigurasi tampilan navbar
+# load the model from disk
+model = pickle.load(open('knn_model.pkl', 'rb'))
+model2 = pickle.load(open('naive_bayes_model.pkl', 'rb'))
+
 st.set_page_config(
-    page_title="Streamlit Navbar",
-    layout="wide",
-    initial_sidebar_state="expanded"
+    page_title="Prediksi Nilai Saham Bank BCA",
+    page_icon="👋",
 )
 
-# Menampilkan navbar
-st.sidebar.title("Navigation")
-selected_page = st.sidebar.radio(
-    "Go to",
-    ("Data", "Preprocessing Data", "Modelling", "Implementation")
-)
+st.title("")
+st.sidebar.success("Pilih Halaman Yang Ingin Anda Tuju.")
 
-# Tampilkan konten sesuai dengan halaman yang dipilih
-if selected_page == "Data":
-    st.header("Data")
-    # Tambahkan konten untuk halaman Data di sini
-       
+st.title("Prediksi Nilai Saham Bank BCA")
 
-    # Deskripsi data saham BBCA
-    st.markdown("### Deskripsi Data Saham BBCA")
-    st.markdown("1. Asal Data:")
-    st.markdown("   Saya telah mengambil data harga saham PT Bank Central Asia Tbk (BBCA) dari sumber yang terpercaya, yaitu Yahoo Finance.")
-    st.markdown("2. Tipe Data:")
-    st.markdown("   Data harga saham BBCA merupakan tipe data float, yang digunakan untuk merepresentasikan angka desimal atau pecahan.")
-    st.markdown("3. Tentang Data:")
-    st.markdown("   Data ini mencakup informasi dan statistik terkait harga saham BBCA selama periode tertentu. Anda dapat melakukan analisis lebih lanjut terhadap data ini, seperti menghitung rata-rata harga saham, mengidentifikasi perubahan persentase, dan melakukan perhitungan lainnya yang relevan untuk analisis pasar dan investasi.")
+tab1, tab2, tab3, tab4 = st.tabs(["Data", "Preprocessing Data", "Modeling", "Implementasi"])
 
+with tab1:
+  st.write("tes")
 
-elif selected_page == "Preprocessing Data":
-    st.header("Preprocessing Data Page")
+with tab2:
+   st.write("Reduksi Dimensi")
+   
+   st.write("MinMax Scaller")
+   
     
-    # Tambahkan pilihan preprocessing
-    preprocessing_option = st.selectbox("Pilih Preprocessing", ("MinMaxScaler", "Reduksi Dimensi"))
+with tab3:
+   st.write("Metode KNN")
+   
+   st.write("Metode Naive Bayes")
+   
 
-    if preprocessing_option == "MinMaxScaler":
-        st.write("Anda memilih MinMaxScaler")
-        # Tambahkan konten untuk MinMaxScaler di sini
-        
-        # Simulasikan hasil preprocessing dengan tabel 3x3
-        df_minmax = pd.DataFrame({
-            'Fitur': ['Fitur 1', 'Fitur 2', 'Fitur 3'],
-            'Hasil 1': [0.1, 0.2, 0.3],
-            'Hasil 2': [0.4, 0.5, 0.6],
-            'Hasil 3': [0.7, 0.8, 0.9]
-        })
-        st.subheader("Hasil Preprocessing MinMaxScaler")
-        st.dataframe(df_minmax)
+with tab4:
+    # Define the prediction function
+    def predict(Open, High, Low, Close, Volume):
+        prediction = model.predict(pd.DataFrame([[Open, High, Low, Close, Volume]], columns = ['"Open, High, Low, Close, Volume"',]))
+        return prediction
 
-    elif preprocessing_option == "Reduksi Dimensi":
-        st.write("Anda memilih Reduksi Dimensi")
-        # Tambahkan konten untuk Reduksi Dimensi di sini
-        
-        # Simulasikan hasil preprocessing dengan tabel 3x3
-        df_dimensi = pd.DataFrame({
-            'Fitur': ['Fitur 1', 'Fitur 2', 'Fitur 3'],
-            'Hasil 1': [1, 2, 3],
-            'Hasil 2': [4, 5, 6],
-            'Hasil 3': [7, 8, 9]
-        })
-        st.subheader("Hasil Preprocessing Reduksi Dimensi")
-        st.dataframe(df_dimensi)
-
-elif selected_page == "Modelling":
-    st.header("Modelling")
+    def predict2(Open, High, Low, Close, Volume):
+        prediction2 = model2.predict2(pd.DataFrame([[Open, High, Low, Close, Volume]], columns = ['"Open, High, Low, Close, Volume"',]))
+        return prediction2
     
-    # Tambahkan pilihan model
-    model_option = st.selectbox("Pilih Model", ("Naive Bayes", "KNN"))
+    st.header('Jawablah Semua Pertanyaan Berikut :')
 
-    if model_option == "Naive Bayes":
-        st.write("Ini Model model Naive Bayes")
-        # Tambahkan konten untuk model Naive Bayes di sini
-        
-        # Simulasikan penghitungan akurasi Naive Bayes
-        accuracy = 0.85  # Contoh nilai akurasi
-        
-        st.write("Hasil Akurasi Naive Bayes: {:.2f}".format(accuracy))
+    Open = st.selectbox('Apakah anak-anak aman di antara anggota keluarga seperti kakek nenek, paman, bibi, sepupu', ['Setuju', 'Tidak Setuju'])
+    High = st.selectbox('Anak-anak paling sering dilecehkan oleh orang asing di masyarakat kita', ['Setuju', 'Tidak Setuju'])
+    Low = st.selectbox('Anak laki-laki tidak membutuhkan pengetahuan pencegahan pelecehan seksual', ['Setuju', 'Tidak Setuju'])
+    Close = st.selectbox('Mengajarkan pencegahan pelecehan seksual di sekolah tidak perlu. Itu akan membuat anak penasaran dengan seks', ['Setuju', 'Tidak Setuju'])
+    Volume = st.selectbox('Apakah anda tahu apa itu perawatan anak?', ['Iya Tahu', 'Tidak Tahu'])
 
-    elif model_option == "KNN":
-        st.write("Ini model KNN")
-        # Tambahkan konten untuk model KNN di sini
-        
-        # Simulasikan penghitungan akurasi KNN
-        accuracy = 0.92  # Contoh nilai akurasi
-        
-        st.write("Hasil Akurasi KNN: {:.2f}".format(accuracy))
+    if st.button('Prediksi'):
+        prediksi = predict(Open, High, Low, Close, Volume)
+        prediksi2 = predict2(Open, High, Low, Close, Volume)
+        st.success(f'Prediksi harga open KNN: {prediksi}')
+        st.success(f'Prediksi harga open Menggunakan Naive Bayes: {prediksi2}')
