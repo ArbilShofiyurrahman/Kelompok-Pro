@@ -26,6 +26,16 @@ elif selected_page == "Preprocessing Data":
 elif selected_page == "Modelling":
     st.header("Modelling Page")
     # Tambahkan konten untuk halaman Modelling di sini
+     # Tambahkan pilihan model
+    model_option = st.selectbox("Pilih Model", ("Naive Bayes", "KNN"))
+
+    if model_option == "Naive Bayes":
+        st.write("Anda memilih model Naive Bayes")
+        # Tambahkan konten untuk model Naive Bayes di sini
+
+    elif model_option == "KNN":
+        st.write("Anda memilih model KNN")
+        # Tambahkan konten untuk model KNN di sini
 
 elif selected_page == "Implementation":
     st.header("Implementation Page")
