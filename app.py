@@ -17,6 +17,18 @@ st.markdown(
         padding: 1rem;
         background-color: #f0f0f0;
         margin-bottom: 1rem;
+        
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <style>
+    .navbar a {
+        text-decoration: none;
     }
     </style>
     """,
