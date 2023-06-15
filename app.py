@@ -19,7 +19,16 @@ st.title("Prediksi Nilai Saham Bank BCA")
 tab1, tab2, tab3, tab4 = st.tabs(["Data", "Preprocessing Data", "Modeling", "Implementasi"])
 
 with tab1:
-  st.write("tes")
+  # Deskripsi data saham BBCA
+   st.markdown("### Deskripsi Data Saham BBCA")
+   st.markdown("1. Asal Data:")
+   st.markdown("   Saya telah mengambil data harga saham PT Bank Central Asia Tbk (BBCA) dari sumber yang terpercaya, yaitu Yahoo Finance.")
+   st.markdown("2. Tipe Data:")
+   st.markdown("   Data harga saham BBCA merupakan tipe data float, yang digunakan untuk merepresentasikan angka desimal atau pecahan.")
+   st.markdown("3. Tentang Data:")
+   st.markdown("   Data ini mencakup informasi dan statistik terkait harga saham BBCA selama periode tertentu. Anda dapat melakukan analisis lebih lanjut terhadap data ini, seperti menghitung rata-rata harga saham, mengidentifikasi perubahan persentase, dan melakukan perhitungan lainnya yang relevan untuk analisis pasar dan investasi.")
+
+
 
 with tab2:
    st.write("Reduksi Dimensi")
