@@ -7,27 +7,33 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Menampilkan navbar
-st.sidebar.title("Navigation")
-selected_page = st.sidebar.radio(
-    "Go to",
-    ("Data", "Preprocessing Data", "Modelling", "Implementation")
+# Menampilkan navbar di bagian atas (top center) halaman
+st.markdown(
+    """
+    <style>
+    .navbar {
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        background-color: #f0f0f0;
+        margin-bottom: 1rem;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
 )
 
-# Tampilkan konten sesuai dengan halaman yang dipilih
-if selected_page == "Data":
-    st.header("Data Page")
-    # Tambahkan konten untuk halaman Data di sini
+st.markdown(
+    """
+    <div class="navbar">
+        <a href="#" style="padding: 0 1rem;">Data</a>
+        <a href="#" style="padding: 0 1rem;">Preprocessing Data</a>
+        <a href="#" style="padding: 0 1rem;">Modelling</a>
+        <a href="#" style="padding: 0 1rem;">Implementation</a>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
-elif selected_page == "Preprocessing Data":
-    st.header("Preprocessing Data Page")
-    # Tambahkan konten untuk halaman Preprocessing Data di sini
-
-elif selected_page == "Modelling":
-    st.header("Modelling Page")
-    # Tambahkan konten untuk halaman Modelling di sini
-
-elif selected_page == "Implementation":
-    st.header("Implementation Page")
-    # Tambahkan konten untuk halaman Implementation di sini
-
+# Tambahkan konten di bawah navbar
+st.header("Halaman Utama")
